@@ -99,6 +99,25 @@
   </div>
 
 <script>
+  function optionsSelected(e) {
+    if(e.shiftKey) {
+      const options = document.querySelectorAll('input');
+      let checkCount = 0;
+
+      options.forEach(option => {
+        if(option.checked) {   
+          option.checked = true;
+          checkCount++;
+        }
+        else if (checkCount > 0 && checkCount <= 1) {
+          option.checked = true;
+        }
+      });
+    }
+  }
+
+   window.addEventListener('click', optionsSelected);
+
 </script>
 </body>
 </html>
